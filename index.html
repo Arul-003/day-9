@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <p>JavaScript</p>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+    <h1>Javascript numbers</h1>
+    <h2>POSITIVE_INFINITY</h2>
+    <p>POSITIVE_INFINITY is returned on overflow:</p>
+    <p id="positi"></p>
+    <p id="nan"></p>
+
+    <h1>Javascript arrays</h1>
+    <p id="array"></p>
+
+    <h1>Javascript arrays</h1>
+    <h2>Nested Javascript</h2>
+    <p id="nesar"></p>
+
+    <h1>Javascript arrays</h1>
+    <h2>length property</h2>
+    <p id="lenar"></p>
+
+    <h1>Javascript array push</h1>
+    <h2>push method</h2>
+    <p id="push1"></p>
+    <p id="push2"></p>
+
+    <h1>Javascript concat</h1>
+    <h2>the concat or merge method</h2>
+    <p id="conct"></p>
+
+    <h1>JavaScript Arrays</h1>
+    <h2>The splice Method</h2>
+    <p id="splice1"></p>
+    <p id="splice2"></p>
+
+    <h1>JavaScript Arrays</h1>
+    <h2>The indexOf Method</h2>
+    <p id="indeo"></p>
+
+    <h1>JavaScript Arrays</h1>
+    <h2>The findLastIndex Method</h2>
+    <p id="findin"></p>
+
+    <h1>JavaScript Booleans</h1>
+    <p>Display the value of Boolean(10 > 9):</p>
+    <p id="boole"></p>
+
+    <h2>JavaScript if .. else</h2>
+    <p>A time-based greeting:</p>
+    <p id="elif"></p>
+
+    <h2>JavaScript switch</h2>
+    <p id="swit"></p>
+    </div>
+    <footer>
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+              </div>
+              <div class="col-md-4">
+                <h3>Latest News</h3>
+                <ul>
+                  <li><a href="#">News Item 1</a></li>
+                  <li><a href="#">News Item 2</a></li>
+                  <li><a href="#">News Item 3</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+      </div>
+    <script>
+        let x = 1/0;
+        document.getElementById("positi").innerHTML =x;
+        document.getElementById("nan").innerHTML = Number.NaN;
+        const cars = ["saab","volvo","BMW"];
+        cars[0] = "benz";
+        document.getElementById("array").innerHTML = cars;
+        let y = "";
+        const myObj = {
+            name: "steve",
+            age: 22,
+            cars: [
+                {name:"Ford",models:["Fiesta","Focus","Mustang"]},
+                {name:"BMW",models:["320","X3","X5"],},
+                {name:"Fiat",models:["500","Panda"]}
+            ]
+        }
+        for (let i in myObj.cars) { y += "<h2>" + myObj.cars[i].name + "</h2>";
+            for (let j in myObj.cars[i].models) {
+                y += myObj.cars[i].models[j] + "<br>";
+            }
+        }
+        document.getElementById("nesar").innerHTML = y;
+        const fruits = ["banana","apple","graphes","orange"];
+        let size = fruits.length;
+        document.getElementById("lenar").innerHTML = size;
+        const fruit = ["banana","apple","orange","mango"];
+        document.getElementById("push1").innerHTML = fruits;
+        fruits.push("kiwi");
+        document.getElementById("push2").innerHTML = fruits;
+        const myGirls = ["cecilie","lone"];
+        const myBoys = ["email","tobias","linus"];
+        const myChildren = myGirls.concat(myBoys);
+        document.getElementById("conct").innerHTML = myChildren;
+        const fruitss = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("splice1").innerHTML = fruitss;
+        fruitss.splice(2, 0, "Lemon", "Kiwi");
+        document.getElementById("splice2").innerHTML = fruitss;
+        const plants = ["rose", "lemon", "graph", "sandal"];
+        let position = plants.indexOf("rose") + 1;
+        document.getElementById("indeo").innerHTML = "rose is found in position " + position;
+        const temp = [27, 28, 30, 40, 42, 35, 30];
+        let pos = temp.findLastIndex(x => x > 40);
+        document.getElementById("findin").innerHTML = "The last temperature over 40 was in position " + pos;
+        document.getElementById("boole").innerHTML = Boolean(10 > 9);
+        const time = new Date().getHours();
+        let greeting;
+        if (time < 10) {
+          greeting = "Good morning";
+        } else if (time < 20) {
+          greeting = "Good day";
+        } else {
+          greeting = "Good evening";
+        }
+        document.getElementById("elif").innerHTML = greeting;
+        let day;
+        switch (new Date().getDay()) {
+          case 0:
+            day = "Sunday";
+            break;
+          case 1:
+            day = "Monday";
+            break;
+          case 2:
+            day = "Tuesday";
+            break;
+          case 3:
+            day = "Wednesday";
+            break;
+          case 4:
+            day = "Thursday";
+            break;
+          case 5:
+            day = "Friday";
+            break;
+          case  6:
+            day = "Saturday";
+        }
+        document.getElementById("swit").innerHTML = "Today is " + day;
+    </script>
+</body>
+</html>
